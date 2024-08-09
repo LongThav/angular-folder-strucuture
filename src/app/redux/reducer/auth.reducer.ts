@@ -1,6 +1,5 @@
-// src/app/store/reducers/auth.reducer.ts
 import { createReducer, on } from '@ngrx/store';
-import { loginSuccess, loginFailure, logout } from '../actions/auth.actions';
+import { loginSuccess, loginFailure, logout, registerSuccess, registerFailure } from '../actions/auth.actions';
 
 export interface AuthState {
   token: string | null;
@@ -20,6 +19,15 @@ export const authReducer = createReducer(
     error: null,
   })),
   on(loginFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(registerSuccess, (state, { token }) => ({
+    ...state,
+    token,
+    error: null,
+  })),
+  on(registerFailure, (state, { error }) => ({
     ...state,
     error,
   })),

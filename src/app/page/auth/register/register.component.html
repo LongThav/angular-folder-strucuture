@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4" style="max-width: 400px; width: 100%;">
+        <h3 class="text-center mb-4">Register</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="f_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="f_name" formControlName="f_name" placeholder="Enter first name" />
+                <div *ngIf="registerForm.get('f_name')?.invalid && registerForm.get('f_name')?.touched" class="text-danger">
+                    <small *ngIf="registerForm.get('f_name')?.errors?.['required']">First name is required.</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="l_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="l_name" formControlName="l_name" placeholder="Enter last name" />
+                <div *ngIf="registerForm.get('l_name')?.invalid && registerForm.get('l_name')?.touched" class="text-danger">
+                    <small *ngIf="registerForm.get('l_name')?.errors?.['required']">Last name is required.</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email" />
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                    <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</small>
+                    <small *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter password" />
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+                    <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</small>
+                    <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                        characters long.</small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Register</button>
+        </form>
+    </div>
+</div>

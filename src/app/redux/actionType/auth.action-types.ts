@@ -5,3 +5,11 @@ export enum AuthActionTypes {
     LOGIN_FAILURE = '[Auth] Login Failure',
     LOGOUT = '[Auth] Logout'
 }
+
+
+export enum AuthActionTypesRegister {
+    REGISTER = '[Auth] REGISTER',
+    REGISTER_SUCCESS = '[Auth] REGISTER Success',
+    REGISTER_FAILURE = '[Auth] REGISTER Failure',
+    LOGOUT = '[Auth] Logout'
+}
