@@ -23,13 +23,13 @@ export class AuthEffects {
                     password: action.password,
                 })).pipe(
                     map(response => {
-                        console.log('Login response:', response); // Log the response
+                        // console.log('Login response:', response); // Log the response
                         return loginSuccess({ token: response.token });
                     }),
                     catchError((error: any) => {
                         // Handle error appropriately
                         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-                        console.error('Login error:', errorMessage); // Log the error
+                        // console.error('Login error:', errorMessage); // Log the error
                         return of(loginFailure({ error: errorMessage }));
                     })
                 )
