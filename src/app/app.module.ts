@@ -8,13 +8,15 @@ import { LoginComponent } from './page/auth/login/login.component';
 import { AppStoreModule } from './store';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './page/auth/register/register.component';
+import { DashboardComponent } from './page/home/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

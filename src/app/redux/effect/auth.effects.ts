@@ -49,12 +49,12 @@ export class AuthEffects {
                     roleId: action.roleId // Include roleId if required
                 })).pipe(
                     map(response => {
-                        console.log('Register response:', response); // Log the response
+                        // console.log('Register response:', response); // Log the response
                         return registerSuccess({ token: response.token });
                     }),
                     catchError((error: any) => {
                         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-                        console.error('Register error:', errorMessage); // Log the error
+                        // console.error('Register error:', errorMessage); // Log the error
                         return of(registerFailure({ error: errorMessage }));
                     })
                 )

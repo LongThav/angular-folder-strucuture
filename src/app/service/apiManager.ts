@@ -8,7 +8,7 @@ export class ApiManager {
 
     async fetch(url: string, options: RequestInit = {}): Promise<any> {
         try {
-            console.log('Fetching URL:', url, 'with options:', options);
+            // console.log('Fetching URL:', url, 'with options:', options);
             const response = await fetch(url, {
                 ...options,
                 headers: {
